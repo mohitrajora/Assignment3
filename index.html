@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Grid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; margin: 20px; }
+
+    .main {
+      border: 2px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-between;
+    }
+
+    .box {
+      flex: 1 1 calc(33.33% - 20px);
+      min-width: 250px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .from-left { animation-name: fadeInLeft; }
+    .from-right { animation-name: fadeInRight; }
+    .from-bottom { animation-name: fadeInBottom; }
+
+    i {
+      background: #00AEEF;
+      color: white;
+      border-radius: 50%;
+      padding: 10px;
+      font-size: 20px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    h1 {
+      display: inline;
+      font-size: 18px;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+
+    p { margin-top: 10px; font-size: 14px; color: #555; }
+
+    /* Animations */
+    @keyframes fadeInLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeInRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes fadeInBottom {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .box { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="box from-left" style="animation-delay: .2s">
+      <i class="fa fa-briefcase"></i>
+      <h1>Lorem Ipsum</h1>
+      <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+    </div>
+
+    <div class="box from-bottom" style="animation-delay: .4s">
+      <i class="fa fa-comments"></i>
+      <h1>Dolor Sit</h1>
+      <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+    </div>
+
+    <div class="box from-right" style="animation-delay: .6s">
+      <i class="fa fa-bar-chart"></i>
+      <h1>Sed ut perspiciatis</h1>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+    </div>
+
+    <div class="box from-left" style="animation-delay: .8s">
+      <i class="fa fa-home"></i>
+      <h1 style="color:#00AEEF">Magni Dolores</h1>
+      <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    </div>
+
+    <div class="box from-bottom" style="animation-delay: 1s">
+      <i class="fa fa-sun-o"></i>
+      <h1>Nemo Enim</h1>
+      <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+    </div>
+
+    <div class="box from-right" style="animation-delay: 1.2s">
+      <i class="fa fa-cogs"></i>
+      <h1>Eiusmod Tempor</h1>
+      <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+    </div>
+  </div>
+</body>
+</html>
